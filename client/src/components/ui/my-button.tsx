@@ -9,11 +9,11 @@ type ButtonProps = {
 
 }
 
-export const Button = ({title, bgColor, customGradient, textColor, textSize, textWeight } : ButtonProps) => {
+export const Button = ({title, bgColor, customGradient, textColor, textWeight } : ButtonProps) => {
 
     return (
 
-        <button type="submit" className={`${bgColor} ${textColor} ${textSize} ${customGradient} font-main ${textWeight} px-3 py-1 hover:hue-rotate-15 hover:duration-300 rounded-full`} >{title}</button>
+        <button type="submit" className={`${bgColor} ${textColor} text-sm md:text-lg ${customGradient} font-main ${textWeight} px-3 py-1 hover:hue-rotate-15 hover:duration-300 rounded-full`} >{title}</button>
 
     )
 

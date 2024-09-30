@@ -1,36 +1,37 @@
 type FooterProps = {
 
     title: string;
+    sub_title: string;
     contacts: string[];
     address : string;
 
 }
 
-export const Footer = ({title, contacts, address} : FooterProps) => {
+export const Footer = (props : FooterProps) => {
     return (
 
         <footer>
-            <div className="w-full p-4 flex gap-8 text-sm justify-between font-main bg-slate-100 border-t-2">
+            <div className="w-full p-4 md:p-8 flex gap-8 md:gap-12 text-sm justify-between font-main bg-slate-100 border-t-2">
 
-                <div className="text-sm font-extrabold">
-                    <h3>{title}</h3>
-                    <p className="text-xs font-light">Sit aliquam provident at quo?</p>
+                <div className="text-sm md:text-2xl font-extrabold w-1/3">
+                    <h3>{props.title}</h3>
+                    <p className="text-xs md:text-lg font-light">{props.sub_title}</p>
                 </div>
 
-                <div className="text-xs text-nowrap">
-                    <h4 className="font-bold">Kontak Kami</h4>
+                <div className="text-nowrap w-1/3">
+                    <h4 className="font-bold text-xs md:text-lg">Kontak Kami</h4>
                     <ul>
-                        {contacts.map((contact) => {
+                        {props.contacts.map((contact) => {
                             return(
-                                <li><a href="/" className="hover:text-purple-900 hover:underline decoration-dashed">{contact}</a></li>
+                                <li><a href="/" className="md:text-lg hover:text-purple-900 hover:underline decoration-dashed">{contact}</a></li>
                             )
                         })}
                     </ul>
                 </div>
 
-                <div className="text-xs">
+                <div className="text-xs md:text-lg w-1/3">
                     <h4 className="font-bold">Address</h4>
-                    <address>{address}</address>
+                    <address>{props.address}</address>
                 </div>
 
             </div>
