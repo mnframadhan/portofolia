@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
+import { Toaster } from '@/components/ui/toaster'
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 
 const navigationItems = {title: "Portofolia.id", navigation : ["Eksplor", "Tentang Kami"]}
@@ -10,6 +11,7 @@ export const Route = createRootRoute({
     <>
         <Navbar title={navigationItems.title} items={navigationItems.navigation} />
         <Outlet />
+        <Toaster />
         <Footer title={footerItems.title} sub_title={footerItems.sub_title} contacts={footerItems.contacts} address={footerItems.address} /> 
     </>
   ),

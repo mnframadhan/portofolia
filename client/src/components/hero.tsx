@@ -56,7 +56,7 @@ export const Hero = () => {
         <h2 className="font-bold text-2xl md:text-4xl text-center">Gabung Sekarang Juga!</h2>
       
           <Marquee>
-            <div className="flex flex-wrap items-center justify-center p-8 gap-4 md:gap-8 w-[980px]">
+            <div className="flex flex-wrap items-center justify-center p-8 gap-4 md:gap-8">
               {showedUserData.map((item) => {
                 return (
                   <div className="bg-purple-200 flex flex-col gap-2 p-4 px-8 shadow-xl rounded-lg hover:hue-rotate-15">

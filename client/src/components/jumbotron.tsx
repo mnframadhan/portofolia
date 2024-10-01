@@ -1,5 +1,8 @@
 import { Typewriter } from "./ui/my-typewriter"
 import { Button } from "./ui/my-button"
+import { useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "@/hooks/use-toast";
 
 type JumbotronProps = {
     title : string;
@@ -7,6 +10,10 @@ type JumbotronProps = {
 }
 
 export const Jumbotron = (props : JumbotronProps) => {
+
+    const navigate = useNavigate();
+    const [username, setUsername] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
 
     return (
         <section id="jumbotron" className="">
@@ -32,9 +39,22 @@ export const Jumbotron = (props : JumbotronProps) => {
                     <div className="flex font-main">                    
                         <div className="flex bg-white items-center px-3 py-1 border-2 border-r-0 rounded-l-full" >
                             <p className="text-slate-600 text-sm md:text-lg">portofolia.id/</p>
-                            <input type="text" className="w-24 md:w-36 text-sm md:text-lg focus:outline-none" placeholder="nama-kamu" />
+                            <input 
+                                onChange={(e) => setUsername(e.target.value)}
+                                type="text" 
+                                className="w-24 md:w-36 text-sm md:text-lg focus:outline-none" 
+                                placeholder="nama-kamu" />
                         </div>
-                        <button className="px-2 font-semibold bg-gradient-to-tl from-purple-900 to-purple-600 text-sm tracking-wider font-main text-white border-2 border-l-0 hover:duration-300 hover:hue-rotate-15 rounded-r-full">Klaim</button>
+                        <button 
+                            onClick={() =>{
+                                localStorage.setItem('candidateUsername', username)
+                                setMessage("Berhasil melakukan klaim");
+                                toast({title: message, description: "Mengalihkan halaman..."})
+                                setTimeout(() => {
+                                    navigate({to:"/auth/register"})
+                                }, 1000*2)
+                            }} 
+                            className="px-2 font-semibold bg-gradient-to-tl from-purple-900 to-purple-600 text-sm tracking-wider font-main text-white border-2 border-l-0 hover:duration-300 hover:hue-rotate-15 rounded-r-full">Klaim</button>
                     </div>
                 </div>
 
@@ -43,7 +63,7 @@ export const Jumbotron = (props : JumbotronProps) => {
                         <figure className="flex items-center justify-center">
                             {[...Array(5).keys()].map((item) => {
                                 return (
-                                    <div className="overflow-hidden mr-[-16px] border-4 border-white w-14 md:w-20 h-14: md:h-20 rounded-full bg-white">
+                                    <div className="overflow-hidden mr-[-16px] border-4 border-white w-14 h-14 md:w-20 md:h-20 rounded-full bg-white">
                                         <img src="fitrah-example-image.png" alt={`${item}`} />
                                     </div>
                                 )
