@@ -4,7 +4,8 @@
   "description": "API untuk portofolia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "dev": "nodemon ./src/index.ts"
   },
   "keywords": [
     "API"
@@ -13,10 +14,19 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
     "@types/typescript": "^0.4.29",
+    "@types/uuid": "^10.0.0",
+    "drizzle-kit": "^0.24.2",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "express": "^4.21.0"
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.33.0",
+    "express": "^4.21.0",
+    "postgres": "^3.4.4",
+    "uuid": "^10.0.0"
   }
 }

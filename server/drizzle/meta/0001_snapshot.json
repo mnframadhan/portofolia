@@ -1,0 +1,44 @@
+{
+  "id": "e7486581-71be-4cc0-b5bb-09b00383fb87",
+  "prevId": "101cd01a-f6cf-429c-a3f4-8a1bd62a9f53",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.testusers": {
+      "name": "testusers",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(256)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "username": {
+          "name": "username",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "phone": {
+          "name": "phone",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

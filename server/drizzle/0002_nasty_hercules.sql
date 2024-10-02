@@ -1,0 +1,1 @@
+ALTER TABLE "testusers" ADD COLUMN "avatar" varchar(256);
