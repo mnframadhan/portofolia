@@ -11,3 +11,11 @@ app.get('/', (req, res) => {
     res.send(response);
 
 })
+
+app.get('/api/hello', (req, res) => {
+
+    const sayHi = "Hello, world!"
+    res.status(200);
+    res.json({message: sayHi});
+
+})
