@@ -1,7 +1,12 @@
+import { Link } from "@tanstack/react-router";
+
 type NavbarProps = {
 
     title : string;
-    items? : string[];
+    items : {
+        item: string;
+        navigateTo: string; 
+    }[];
 
 }
 
@@ -22,7 +27,9 @@ export const Navbar = (props : NavbarProps) => {
                                 props.items?.map(item => {
 
                                     return (
-                                        <li key={item}><a className="decoration-dashed hover:underline hover:text-purple-600" href="">{item}</a></li>
+                                        <li key={item.item}>
+                                            <Link className="decoration-dashed hover:underline hover:text-purple-600" to={`${item.navigateTo}`}>{item.item}</Link>
+                                        </li>
                                     )
                                 })
                             }

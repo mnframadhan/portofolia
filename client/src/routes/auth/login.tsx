@@ -9,9 +9,9 @@ export const Route = createFileRoute('/auth/login')({
 export function Login () {
 
   return(
-    <section id='login'>
+    <section id='login' className='flex items-center justify-center'>
 
-      <div className='flex flex-col gap-4 p-8 md:max-w-[40rem] font-main'>
+      <div className='flex flex-col gap-4 p-8 md:p-18 md:max-w-[600px] font-main'>
 
         <div>
           <span className='text-purple-600'>Portofolia.id</span>
