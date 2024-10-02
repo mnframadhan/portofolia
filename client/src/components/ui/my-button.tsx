@@ -13,7 +13,7 @@ export const Button = ({title, bgColor, customGradient, textColor, textWeight } 
 
     return (
 
-        <button type="submit" className={`${bgColor} ${textColor} text-sm md:text-lg ${customGradient} font-main ${textWeight} px-3 py-1 hover:hue-rotate-15 hover:duration-300 rounded-full`} >{title}</button>
+        <button type="submit" className={`${bgColor} ${textColor} text-sm md:text-lg lg:text-xl ${customGradient} font-main ${textWeight} px-3 py-1 hover:hue-rotate-15 hover:duration-300 rounded-full`} >{title}</button>
 
     )
 
