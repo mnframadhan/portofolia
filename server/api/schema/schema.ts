@@ -7,3 +7,10 @@ export const testUser = pgTable('testusers', {
     avatar: varchar('avatar', {length: 256}),
 });
 
+
+export const users = pgTable('users', {
+
+    
+
+})
+

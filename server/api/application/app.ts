@@ -1,10 +1,18 @@
+import cors from 'cors';
+import dotenv from 'dotenv';
 import express from 'express';
-import { v4 } from 'uuid';
 import { db } from '../config/database';
 import { testUser } from '../schema/schema';
 
+dotenv.config();
 export const app = express();
+const corsOrigin = process.env.DEV_CORS_ORIGIN!;
 app.use(express.json());
+app.use(cors({
+    origin: [corsOrigin],
+    methods: ['GET', 'POST', 'PATCH'],
+    allowedHeaders: ['Content-Type']
+}))
 
 
 app.get('/', (req, res) => {
@@ -15,25 +23,12 @@ app.get('/', (req, res) => {
 
 })
 
-// test supabase on vercel
-app.post('/api/test-user', async (req, res) => {
+app.get('/api/testusers', async (req, res) => {
 
-    const newUser = {
-        id: v4(),
-        ...req.body
-    }
+    const response = await db.select().from(testUser);
+    console.log(response);
 
-    await db.insert(testUser).values(newUser);
-
-    res.status(201);
-    res.json(newUser);
-
-}) 
-
-app.get('/api/hello', (req, res) => {
-
-    const sayHi = "Hello, world!"
     res.status(200);
-    res.json({message: sayHi});
+    res.json(response)
 
 })
