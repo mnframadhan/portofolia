@@ -4,11 +4,13 @@ import express from 'express';
 import { UserController } from '../controllers/user-controller';
 import { errorMiddleware } from '../middleware/error-middleware';
 import { authMiddleware } from '../middleware/auth/auth-middleware';
+import { authRateLimit, generalRateLimit } from '../config/rate-limiter';
 
 dotenv.config();
 export const app = express();
 const corsOrigin = process.env.DEV_CORS_ORIGIN!;
 app.use(express.json());
+app.use(generalRateLimit);
 app.use(cors({
     origin: [corsOrigin],
     methods: ['GET', 'POST', 'PATCH'],
@@ -27,7 +29,9 @@ app.get('/', (req, res) => {
 // USER PUBLIC API
 app.post('/api/users/registration', UserController.registerUser);
 app.post('/api/users/login', UserController.loginUser);
-app.get('/api/users/current', authMiddleware, UserController.getCurrentUser);
+
+// USER PROTECTED API
+app.get('/api/users/current', authRateLimit, authMiddleware, UserController.getCurrentUser);
 
 
 // Error Middleware
