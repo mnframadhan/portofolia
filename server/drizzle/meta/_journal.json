@@ -22,6 +22,34 @@
       "when": 1727874724289,
       "tag": "0002_nasty_hercules",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1727949488163,
+      "tag": "0003_tired_bruce_banner",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1727949849738,
+      "tag": "0004_lean_nightcrawler",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1727949907204,
+      "tag": "0005_slimy_tyger_tiger",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1727960930548,
+      "tag": "0006_true_swarm",
+      "breakpoints": true
     }
   ]
 }

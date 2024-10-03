@@ -1,8 +1,9 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-import { db } from '../config/database';
-import { testUser } from '../schema/schema';
+import { UserController } from '../controllers/user-controller';
+import { errorMiddleware } from '../middleware/error-middleware';
+import { authMiddleware } from '../middleware/auth/auth-middleware';
 
 dotenv.config();
 export const app = express();
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use(cors({
     origin: [corsOrigin],
     methods: ['GET', 'POST', 'PATCH'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type', 'X-API-TOKEN']
 }))
 
 
@@ -23,12 +24,11 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/api/testusers', async (req, res) => {
+// USER PUBLIC API
+app.post('/api/users/registration', UserController.registerUser);
+app.post('/api/users/login', UserController.loginUser);
+app.get('/api/users/current', authMiddleware, UserController.getCurrentUser);
 
-    const response = await db.select().from(testUser);
-    console.log(response);
 
-    res.status(200);
-    res.json(response)
-
-})
+// Error Middleware
+app.use(errorMiddleware);

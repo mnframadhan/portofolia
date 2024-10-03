@@ -2,7 +2,7 @@ export type ResponseSimple<T> = {
 
     code: number;
     status: string;
-    data: Array<T>;
+    data: T;
 
 }
 
@@ -18,11 +18,11 @@ export type ResponsePagination<T> = {
     }
 }
 
-export type ResponseError<T= null> = {
+export type ErrorResponse<T=null> = {
 
     code: number;
-    status: number;
+    status: string;
     message: string;
-    data? : Array<T>;
+    data? : T;
 
 }
