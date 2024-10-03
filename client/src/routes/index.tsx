@@ -1,8 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Jumbotron } from "@/components/jumbotron" 
-import { Hero } from "@/components/hero"
-import { AppIntro } from "@/components/app-intro"
-import { Intro } from '@/components/intro'
+import { createFileRoute } from '@tanstack/react-router';
+import { Jumbotron } from "@/components/jumbotron" ;
+import { Hero } from "@/components/hero";
+import { AppIntro } from "@/components/app-intro";
+import { Intro } from '@/components/intro';
+import { useEffect } from 'react';
 
 export const Route = createFileRoute('/')({
   component: LandingPage
@@ -10,6 +11,22 @@ export const Route = createFileRoute('/')({
 
 
 export function LandingPage() {
+
+  const fetchingTest = async () => {
+
+    const apiURL : string = import.meta.env.VITE_API_URL as string;
+    console.log(apiURL);
+  
+    const response = await fetch(`${apiURL}/api/testusers`, {headers: {'Content-Type': 'application/json'}, method: 'GET'});
+    const data = await response.json();
+    
+    console.log(data);
+  
+  }
+  
+  useEffect(() => {
+    fetchingTest();
+  }, [])
 
   return (
     <>
