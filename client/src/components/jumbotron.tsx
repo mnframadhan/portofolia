@@ -17,8 +17,7 @@ export const Jumbotron = (props : JumbotronProps) => {
 
     return (
         <section id="jumbotron" className="">
-            <div className="px-12 lg:px-36 flex flex-col justify-center items-center h-screen gap-8 bg-gray-200">
-
+            <div className="px-12 lg:px-36 flex flex-col justify-center mt-6 items-center h-screen gap-8 bg-[url('background/cloudy-purple.jpg')]">
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex flex-col gap-2 items-center">
                         <p className="text-xs md:text-lg font-main">Powered by: <span className="text-purple-600 hover:underline decoration-dashed">Innovatech Solusindo</span></p>
@@ -36,8 +35,8 @@ export const Jumbotron = (props : JumbotronProps) => {
 
                 <div className="flex flex-col items-center gap-2">
                     <p className="font-main text-xs md:text-lg">Klaim halaman <span className="text-purple-600 hover:duration-300 hover:underline">portoflia</span> milikmu</p>
-                    <div className="flex font-main">                    
-                        <div className="flex bg-white items-center px-3 lg:px-6 py-1 lg:py-2 border-2 border-r-0 rounded-l-full" >
+                    <div className="flex font-main border-4 rounded-full">                    
+                        <div className="flex bg-white items-center px-3 lg:px-6 py-1 lg:py-2 border-r-0 rounded-l-full" >
                             <p className="text-slate-600 text-sm md:text-lg">portofolia.id/</p>
                             <input 
                                 onChange={(e) => setUsername(e.target.value)}

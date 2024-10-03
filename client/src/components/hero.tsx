@@ -52,7 +52,7 @@ const showedUserData = [
 export const Hero = () => {
   return (
     <section id="hero">
-      <div className="flex flex-col justify-center items-center py-6 md:py-12 font-main">
+      <div className="flex flex-col justify-center items-center py-6 md:py-12 font-main bg-purple-300">
         <h2 className="font-bold text-2xl md:text-4xl text-center">Gabung Sekarang Juga!</h2>
       
           <Marquee>
