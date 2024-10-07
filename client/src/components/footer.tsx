@@ -21,9 +21,9 @@ export const Footer = (props : FooterProps) => {
                 <div className="text-nowrap w-1/3 flex flex-col items-center">
                     <h4 className="font-bold text-xs md:text-lg">Kontak Kami</h4>
                     <ul>
-                        {props.contacts.map((contact) => {
+                        {props.contacts.map((contact, index) => {
                             return(
-                                <li><a href="/" className="md:text-lg hover:text-purple-900 hover:underline decoration-dashed">{contact}</a></li>
+                                <li key={index} ><a href="/" className="md:text-lg hover:text-purple-900 hover:underline decoration-dashed">{contact}</a></li>
                             )
                         })}
                     </ul>

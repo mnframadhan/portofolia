@@ -62,7 +62,7 @@ export const Jumbotron = (props : JumbotronProps) => {
                         <figure className="flex items-center justify-center">
                             {[...Array(5).keys()].map((item) => {
                                 return (
-                                    <div className="overflow-hidden mr-[-16px] border-4 border-white w-14 h-14 md:w-20 md:h-20 rounded-full bg-white">
+                                    <div key={item}  className="overflow-hidden mr-[-16px] border-4 border-white w-14 h-14 md:w-20 md:h-20 rounded-full bg-white">
                                         <img src="fitrah-example-image.png" alt={`${item}`} />
                                     </div>
                                 )
@@ -73,9 +73,9 @@ export const Jumbotron = (props : JumbotronProps) => {
                         </div>
                     </div>
                     <div className="flex text-lg md:text-2xl">
-                        {[...Array(5).keys()].map(() => {
+                        {[...Array(5).keys()].map((item) => {
                             return (
-                                <>⭐</>
+                                <div key={item}>⭐</div>
                             )
                         })}
                     </div>

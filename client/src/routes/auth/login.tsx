@@ -11,7 +11,7 @@ export function Login () {
   return(
     <section id='login' className='flex items-center justify-center'>
 
-      <div className='flex flex-col gap-4 p-8 md:p-18 md:max-w-[600px] font-main'>
+      <div className="flex flex-col gap-4 p-8 py-24  font-main w-[600px]">
 
         <div>
           <span className='text-purple-600'>Portofolia.id</span>

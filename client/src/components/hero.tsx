@@ -57,9 +57,9 @@ export const Hero = () => {
       
           <Marquee>
             <div className="flex flex-wrap items-center justify-center p-8 gap-4 md:gap-8">
-              {showedUserData.map((item) => {
+              {showedUserData.map((item, index) => {
                 return (
-                  <div className="bg-purple-200 flex flex-col gap-2 p-4 px-8 shadow-xl rounded-lg hover:hue-rotate-15">
+                  <div key={index} className="bg-purple-200 flex flex-col gap-2 p-4 px-8 shadow-xl rounded-lg hover:hue-rotate-15">
                     <div className="flex gap-4 items-center">
                       <figure>
                         <div className="overflow-hidden h-16 md:h-20 w-16 md:w-20 rounded-full">
